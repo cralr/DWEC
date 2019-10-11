@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Rafael Miguel Cruz Álvarez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 10</title>
+    <script type="text/JavaScript">
+
+    let frase = prompt("Introduzca una frase para ver si es palíndroma o no.");
+    let numCaracteres = frase.length;
+    frase = frase.toLowerCase();
+    let caracter;
+    let cadenaEspacios="";
+    let cadenaInversa="";
+
+    for(i=0;i<numCaracteres;i++){
+        caracter = frase.charAt(i);
+
+        if(caracter !=" "){
+            cadenaEspacios = cadenaEspacios + caracter;
+            cadenaInversa = caracter + cadenaInversa;
+        }
+    }
+
+    if(cadenaEspacios == cadenaInversa){
+        console.log("La frase "+frase+" es un palíndromo.")
+    }
+    else{
+        console.log("La frase "+frase+" no es un palíndromo.")
+    }
+       
+    </script>
+</head>
+<body>
+    <noscript>
+        <h1>Esta p&aacute;gina requiere el uso de JavaScript</h1>
+    </noscript>
+    <p>Ejercicio 10</p>
+    <p>Definir una función que determine si la cadena de texto que se le pasa como parámetro es un
+        palíndromo, es decir, si se lee de la misma forma desde la izquierda y desde la derecha.</p>
+</body>
+</html>
