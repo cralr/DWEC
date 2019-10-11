@@ -6,30 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ejercicio 10</title>
-    <script type="text/JavaScript">
-
-    let frase = prompt("Introduzca una frase para ver si es palíndroma o no.");
-    let numCaracteres = frase.length;
-    frase = frase.toLowerCase();
-    let caracter;
-    let cadenaEspacios="";
-    let cadenaInversa="";
-
-    for(i=0;i<numCaracteres;i++){
-        caracter = frase.charAt(i);
-
-        if(caracter !=" "){
-            cadenaEspacios = cadenaEspacios + caracter;
-            cadenaInversa = caracter + cadenaInversa;
-        }
-    }
-
-    if(cadenaEspacios == cadenaInversa){
-        console.log("La frase "+frase+" es un palíndromo.")
-    }
-    else{
-        console.log("La frase "+frase+" no es un palíndromo.")
-    }
+    <script src="js/eje10.js">
        
     </script>
 </head>
