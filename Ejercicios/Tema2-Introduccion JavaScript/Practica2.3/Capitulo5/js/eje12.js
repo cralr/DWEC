@@ -13,3 +13,7 @@ function muestra() {
     let enlace = document.getElementById("enlace");
     enlace.className = "oculto";
 }
+
+/*window.onload = function(){
+    muestra();
+}*/
