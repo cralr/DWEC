@@ -8,8 +8,8 @@
 
 {
 
-    let informacion = function (elEvento) {
-        let evento = elEvento;
+    let informacion = function (event) {
+        let evento = event;
 
         let coordenadaX = evento.clientX;
         let coordenadaY = evento.clientY;
