@@ -7,6 +7,7 @@
  *primer enlace
  *4. Cuando una sección se oculte, debe cambiar el mensaje del enlace asociado (pista:
  *propiedad innerHTML)
+ *@author Rafael Miguel Cruz Álvarez
  */
 
 function muestraOculta(id) {
