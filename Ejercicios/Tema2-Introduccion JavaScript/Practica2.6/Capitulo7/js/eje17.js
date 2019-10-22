@@ -6,21 +6,48 @@
  */
 
 {
-    let elemento;
+
+    let texto;
+    let info;
 
     let inicio = function(){
-        elemento = document.getElementById("texto");
+        text = document.getElementById("texto");
+        info = document.getElementById("info");
+        let elementoBody = document.body;
+
+        elementoBody.onkeypress = limita;
+        elementoBody.onkeyup = actualizaInfo;
 
     }
-
     window.onload = inicio;
 
-    let limita = function(event){
+    let limita = function(event, maximoCaracteres){
+        let evento = event; 
+        let codigoCaracter = evento.keyCode;
 
+        if(codigoCaracter == 37 || codigoCaracter == 39) {
+          return true;
+        }
         
-    }
+        if(codigoCaracter == 8 || codigoCaracter == 46) {
+          return true;
+        }
+        else if(texto.value.length >= maximoCaracteres ) {
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
 
-
-
-
+      let actualizaInfo = function(maximoCaracteres){
+        if(texto.value.length >= maximoCaracteres ) {
+            info.innerHTML = "Máximo "+maximoCaracteres+" caracteres";
+          }
+          else {
+            info.innerHTML = "Puedes escribir hasta "+(maximoCaracteres-texto.value.length)+" caracteres adicionales";
+          }
+      }    
 }
+
+
