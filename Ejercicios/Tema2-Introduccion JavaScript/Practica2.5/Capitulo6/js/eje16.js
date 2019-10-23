@@ -22,10 +22,11 @@
     }
 
     let muestraInformacion = function (mensaje) {
-        elementoDiv.innerHTML = '<h1>' + mensaje[0] + '</h1>';
+        let texto = '<h1>' + mensaje[0] + '</h1>';
         for (let i = 1; i < mensaje.length; i++) {
-          elementoDiv.innerHTML += '<p>' + mensaje[i] + '</p>';
+          texto += '<p>' + mensaje[i] + '</p>';
         }
+        elementoDiv.innerHTML = texto;
     }
 
     let tamanoVentanaNavegador = function () {
