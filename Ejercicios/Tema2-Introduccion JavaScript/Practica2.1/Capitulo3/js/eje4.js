@@ -5,22 +5,46 @@
  *3.Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
  *@author Rafael Miguel Cruz Álvarez
 */
+{
 
-let valores = [true, 5, false, "hola","adios", 2]; 
-    
-//Elemento de texto mayor
-console.lo(valores[3]>valores[4]);
-//Resultado true
-console.log(valores[0] || valores[3]);
-//Resultado false
-console.log(valores[0] && valores[2]);
-//Suma
-console.log(valores[1] + valores[5]);
-//Resta
-console.log(valores[1] - valores[5]);
-//Multiplicación
-console.log(valores[1] * valores[5]);
-//División
-console.log(valores[1] / valores[5]);
-//Módulo
-console.log(valores[1] % valores[5]);
+    let init = function(){
+        let texto = document.getElementById("texto");
+        let valores = [true, 5, false, "hola","adios", 2]; 
+;
+
+        //Elemento de texto mayor
+        if (valores[3]>valores[4]) 
+            texto.innerHTML += valores[3]+" es mayor que "+valores[4]+"</br>" ;
+        else
+            texto.innerHTML += valores[4]+" es mayor que "+valores[3]+"</br>"; 
+
+        //Resultado true
+        if (valores[0] || valores[3]) 
+            texto.innerHTML += "True</br>";
+        else
+            texto.innerHTML += "False</br>";
+
+        //Resultado false
+        if (valores[0] && valores[2])
+            texto.innerHTML += "True</br>";
+        else
+            texto.innerHTML += "False</br>";
+
+        //Suma
+        texto.innerHTML += "El valor de la suma entre "+valores[1]+" y "+valores[5]+" es: "+(valores[1] + valores[5])+"</br>";
+
+        //Resta
+        texto.innerHTML += "El valor de la resta entre "+valores[1]+" y "+valores[5]+" es: "+(valores[1] - valores[5])+"</br>";
+
+        //Multiplicación
+        texto.innerHTML += "El valor de la multiplicación entre "+valores[1]+" y "+valores[5]+" es: "+valores[1] * valores[5]+"</br>";
+
+        //División
+        texto.innerHTML += "El valor de la división entre "+valores[1]+" y "+valores[5]+" es: "+valores[1] / valores[5]+"</br>";
+
+        //Módulo
+        texto.innerHTML += "El valor del módulo entre "+valores[1]+" y "+valores[5]+" es: "+valores[1] % valores[5]+"</br>";
+    }
+
+    document.addEventListener("DOMContentLoaded",init);
+}

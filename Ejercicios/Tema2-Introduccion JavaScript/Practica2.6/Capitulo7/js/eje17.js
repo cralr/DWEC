@@ -6,20 +6,12 @@
  */
 
 {
-
-    let texto;
-    let info;
-
     let inicio = function(){
         text = document.getElementById("texto");
         info = document.getElementById("info");
-        let elementoBody = document.body;
-
-        elementoBody.onkeypress = limita;
-        elementoBody.onkeyup = actualizaInfo;
 
     }
-    window.onload = inicio;
+    window.addEventListener("load") = inicio;
 
     let limita = function(event, maximoCaracteres){
         let evento = event; 

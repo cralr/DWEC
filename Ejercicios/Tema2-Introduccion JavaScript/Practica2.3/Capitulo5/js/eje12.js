@@ -6,14 +6,23 @@
  *ejecuta la función llamada muestra().
  * @author Rafael Miguel Cruz Álvarez
  */
+{
+    let elemento;
+    let enlace;
 
-function muestra() {
-    let elemento = document.getElementById("adicional");
-    elemento.className = "visible";
-    let enlace = document.getElementById("enlace");
-    enlace.className = "oculto";
-}
+    let init = function(){
+        elemento = document.getElementById("adicional");
+        enlace = document.getElementById("enlace");
+        muestra();
+    }
+    
+    let muestra = function() {
+        elemento.className = "visible";
+        enlace.className = "oculto";
+    }
 
-/*window.onload = function(){
-    muestra();
-}*/
+    document.addEventListener("click",init);
+
+} 
+
+

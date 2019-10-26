@@ -5,5 +5,12 @@
 * @author Rafael Miguel Cruz Álvarez
 */
 
-let texto = "Hola Mundo! \nQué facil es incluir \'comillas simples\' \n y \"comillas dobles\"";
-console.log(texto);
+{
+    let init = function(){
+        let texto = document.getElementById("texto");
+        let mensaje = "Hola Mundo! \nQué facil es incluir \'comillas simples\' \n y \"comillas dobles\"";
+        texto.innerHTML = mensaje;
+    }
+    document.addEventListener("DOMContentLoaded",init);
+}
+

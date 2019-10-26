@@ -10,16 +10,35 @@
  *@author Rafael Miguel Cruz Álvarez
  */
 
-function muestraOculta(id) {
-    let elemento = document.getElementById('parrafo'+id);
+{
+    let parrafo;
+    
 
-    let enlace = document.getElementById('enlace'+id);
-    if(elemento.style.display == "" || elemento.style.display == "block") {
-        elemento.style.display = "none";
-        enlace.innerHTML = 'Mostrar Párrafo';
+    let init = function(){
+        parrafo = document.getElementById(id);
+        let enlace1 = document.getElementById('1');
+        let elace2= document.getElementById('2');
+        let enlace3= document.getElementById('3');
+        enlace1.addEventListener("click",muestraOculta);
+        enlace2.addEventListener("click",muestraOculta);
+        enlace3.addEventListener("click",muestraOculta);
     }
-    else {
-        elemento.style.display = "block";
-        enlace.innerHTML = 'Ocultar Párrafo';
+
+    
+
+    let muestraOculta = function(){
+        if(parrafo.style.display == "" || parrafo.style.display == "block") {
+            parrafo.style.display = "none";
+            enlace.innerHTML = 'Mostrar Párrafo';
+        }
+        else {
+            parrafo.style.display = "block";
+            enlace.innerHTML = 'Ocultar Párrafo';
+        }
     }
+
+    document.addEventListener("DOMContentLoaded",init);
+
 }
+
+

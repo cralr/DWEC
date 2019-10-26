@@ -14,7 +14,7 @@
 {
     let informacion;
 
-    let inicio = function () {
+    let init = function () {
         informacion = document.getElementById("info"); 
         let elementoBody = document.body;
 
@@ -23,7 +23,8 @@
         elementoBody.onclick = muestraRaton;
     }
 
-    window.onload = inicio;
+    document.addEventListener("DOMContentLoaded",init);
+
     let muestraRaton = function (event) {
       
         let coordenadaX = event.clientX;
@@ -49,4 +50,5 @@
     let cambiaColor = function () {
         informacion.className = "mueveRaton";
     }
+
 }
