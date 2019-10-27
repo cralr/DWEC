@@ -4,20 +4,30 @@
 */
 
 {
+    let elementoDiv;
+    /**
+     * Función inicio en el que se crea un escuchador para el botón.
+     */
     let init = function() {
         let boton = document.getElementById("boton");
         boton.addEventListener("click", factorial);
     }
 
+    /**
+     * Función factorial 
+     */
     let factorial = function(){
-        let texto = document.getElementById("texto");
+        elementoDiv= document.getElementById("texto");
         let numero = document.getElementById("text").value;
+        let texto;
         let i;
         let factorial=1;
         for (i = numero;i > 0; i--){
             factorial = factorial *i;
         }
-        return texto.innerHTML = "El factorial es: "+factorial
+        texto = "El factorial es: "+factorial;
+
+        elementoDiv.innerHTML=texto;
     }
     document.addEventListener("DOMContentLoaded", init);
 

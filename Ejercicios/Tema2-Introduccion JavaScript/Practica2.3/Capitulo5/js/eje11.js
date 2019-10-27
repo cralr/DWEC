@@ -7,25 +7,41 @@
  */
 
 {
-  let info;
+  let elementoDiv;
+  let texto 
   let parrafos;
   let enlaces;
+
+    /**
+     * Función inicial
+     */
     let init = function(){
-      info = document.getElementById("eje11");
+      elementoDiv = document.getElementById("eje11");
       parrafos = document.getElementsByTagName("p"); 
       enlaces = document.getElementsByTagName("a");
       mostrarInfo();
     }
 
+    /**
+     * Función en la que se obtiene el número de enlaces del texto.
+     */
     let numeroEnlaces = function(){
-      info.innerHTML = "Enlaces = "+enlaces.length;
+      texto = "Enlaces = "+enlaces.length;
+      elementoDiv.innerHTML = texto;
     }
-      
+    
+    /**
+      * Función en la que se obtiene el penúltimo enlace del texto.
+     */
     let penultimoEnlace = function(){
       let mensaje = "El penultimo enlace apunta a: "+enlaces[enlaces.length-2].href;
-      info.innerHTML = info.innerHTML + "<br/>" + mensaje;
+      texto = texto + "<br/>" + mensaje;
+      elementoDiv.innerHTML = texto;
     }
   
+    /**
+     * Función que muestra el número de enlaces de prueba
+     */
     let enlacesPrueba = function(){
       let contador = 0;
       for(let i=0; i<enlaces.length; i++) {
@@ -33,14 +49,22 @@
         contador++;
         }
       }
-      info.innerHTML = info.innerHTML + "<br/>" + contador + " enlaces apuntan a http://prueba"
-    }
-      
-    let enlacesTercerParrafo = function(){
-      enlaces = parrafos[2].getElementsByTagName("a");
-      info.innerHTML = info.innerHTML + "<br/>" + "Numero de enlaces del tercer párrafo = "+enlaces.length;
+      texto = texto + "<br/>" + contador + " enlaces apuntan a http://prueba";
+      elementoDiv.innerHTML = texto;
     }
 
+    /**
+     * Función que muestra los enlaces del tercer párrafo.
+     */  
+    let enlacesTercerParrafo = function(){
+      enlaces = parrafos[2].getElementsByTagName("a");
+      texto = texto + "<br/>" + "Numero de enlaces del tercer párrafo = "+enlaces.length;
+      elementoDiv.innerHTML = texto;
+    }
+
+    /**
+     * Funcion usada para llamar a las funciones anteriores y mostrarlas en init.
+     */
     let mostrarInfo = function(){
       numeroEnlaces();
       penultimoEnlace();

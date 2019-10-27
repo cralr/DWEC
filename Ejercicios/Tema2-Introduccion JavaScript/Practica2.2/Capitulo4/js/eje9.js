@@ -4,31 +4,36 @@
 */
 
 {
-    {
-        let texto;
+        let elementoDiv;
         let frase;
+
+        /**
+        * Función inicial en la que se crear un escuchador para el botón
+        */
         let init = function(){
             let boton = document.getElementById("boton");
             boton.addEventListener("click", mayusOMinus);
         }
         
+        /**
+         * Función mayusOMinus en la que se recoge la cadena introducida y se devuelve si está escrita en mayus o minus o amabs.
+         */
         let mayusOMinus = function(){
-            texto = document.getElementById("texto");
+            elementoDiv = document.getElementById("texto");
             frase = document.getElementById("text").value;
 
             if(frase == frase.toUpperCase()) {
-                texto.innerHTML = " La frase está en MAYÚSCULAS.";
+                texto = " La frase está en MAYÚSCULAS.";
             }
             else if(frase == frase.toLowerCase()) {
-                texto.innerHTML = "La frase está en minúsculas.";
+                texto = "La frase está en minúsculas.";
             }
             else {
-                texto.innerHTML = "La frase está formada por MAYÚSCULAS y minúsculas";
+                texto = "La frase está formada por MAYÚSCULAS y minúsculas.";
             }
-            return texto.innerHTML;    
+            elementoDiv.innerHTML = texto;    
         }
     
         document.addEventListener("DOMContentLoaded", init);
-    }
 }
 

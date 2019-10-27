@@ -3,17 +3,26 @@
  *@author Rafael MIguel Cruz Álvarez 
 */
 {
-    let texto;
+    
     let num;
+    let elementoDiv;
+    /**
+     * Función inicial en la que se crear un escuchador para el botón
+     */
     let init = function(){
         let boton = document.getElementById("boton");
         boton.addEventListener("click", esPar);
     }
     
+    /**
+     * Función para saber si un número introducido es para o impar.
+     */
     let esPar = function(){
-        texto = document.getElementById("texto");
+        elementoDiv = document.getElementById("texto");
         num = document.getElementById("text").value;
-        return (num%2 == 0) ?  texto.innerHTML= "El número es par" :   texto.innerHTML = "El número es impar";
+        let texto;
+        texto = (num%2 == 0) ?  texto= "El número es par." :   texto = "El número es impar.";
+        elementoDiv.innerHTML = texto;
     }
 
     document.addEventListener("DOMContentLoaded", init);

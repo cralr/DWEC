@@ -11,22 +11,23 @@
  */
 
 {
-    let parrafo;
-    
+    let enlace;
 
+    /**
+     * Función inicial
+     */
     let init = function(){
-        parrafo = document.getElementById(id);
-        let enlace1 = document.getElementById('1');
-        let elace2= document.getElementById('2');
-        let enlace3= document.getElementById('3');
-        enlace1.addEventListener("click",muestraOculta);
-        enlace2.addEventListener("click",muestraOculta);
-        enlace3.addEventListener("click",muestraOculta);
+        enlace = document.getElementsByTagName("a");
+        for (i in enlaces) {
+            enlace[i].onclick = muestraOculta;
+        }
     }
 
-    
-
+    /**
+     * Función que muestra u oculta un párrafo
+     */
     let muestraOculta = function(){
+        let parrafo;
         if(parrafo.style.display == "" || parrafo.style.display == "block") {
             parrafo.style.display = "none";
             enlace.innerHTML = 'Mostrar Párrafo';

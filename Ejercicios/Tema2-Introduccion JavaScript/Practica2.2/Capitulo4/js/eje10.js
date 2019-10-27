@@ -4,20 +4,24 @@
  *@author Rafael MIguel Cruz Álvarez 
 */
 {
-
+    let elementoDiv;
+    /**
+    * Función inicial en la que se crear un escuchador para el botón
+    */
     let init = function(){
         let boton = document.getElementById("boton");
             boton.addEventListener("click", palindromo);
     }
 
     let palindromo = function(){
-        let texto = document.getElementById("texto");
+        elementoDiv = document.getElementById("texto");
         let frase = document.getElementById("text").value;
         let numCaracteres = frase.length;
         frase = frase.toLowerCase();
         let cadenaEspacios="";
         let cadenaInversa="";
         let caracter;
+        let texto;
 
         for(i=0;i<numCaracteres;i++){
             caracter = frase.charAt(i);
@@ -29,11 +33,13 @@
         }
     
         if(cadenaEspacios == cadenaInversa){
-            return texto.innerHTML = ("La frase "+frase+" es un palíndromo.")
+            texto = ("La frase "+frase+" es un palíndromo.")
         }
         else{
-            return texto.innerHTML = ("La frase "+frase+" no es un palíndromo.")
+            texto = ("La frase "+frase+" no es un palíndromo.")
         }
+
+        elementoDiv.innerHTML = texto;
 
     }
     document.addEventListener("DOMContentLoaded", init);

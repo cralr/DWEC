@@ -9,6 +9,10 @@
 {
     let elementoDiv;
 
+    /**
+     * Función que devuelve la información que se mostrará por pantalla según done hagamos el click.
+     * @param {*} evento 
+     */
     let informacion = function (evento) {
         let coordenadaX = evento.clientX;
         let coordenadaY = evento.clientY;
@@ -21,6 +25,10 @@
         muestraInformacion(['Posición', posicionHorizontal, posicionVertical]);
     }
 
+    /**
+     * Función que mostrará el mensaje
+     * @param {*} mensaje 
+     */
     let muestraInformacion = function (mensaje) {
         let texto = '<h1>' + mensaje[0] + '</h1>';
         for (let i = 1; i < mensaje.length; i++) {
@@ -29,10 +37,16 @@
         elementoDiv.innerHTML = texto;
     }
 
+    /**
+     * Función qeu devuelve el tamaño de la ventana.
+     */
     let tamanoVentanaNavegador = function () {
         return [window.innerWidth, window.innerHeight];
     }
 
+    /**
+     * Función inicial en el que se crea un escuchador para cuando hagamos click en la pantalla.
+     */
     let init = function(){
         elementoDiv = document.getElementById("info");
         

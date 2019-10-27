@@ -6,6 +6,9 @@
 */
 
 {
+    /**
+     * Función inicial que mostrará un mensaje.
+     */
     let init = function(){
         let texto = document.getElementById("texto");
         let mensaje = "Hola Mundo! \nQué facil es incluir \'comillas simples\' \n y \"comillas dobles\"";

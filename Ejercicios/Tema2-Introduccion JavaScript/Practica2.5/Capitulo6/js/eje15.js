@@ -14,6 +14,9 @@
 {
     let informacion;
 
+    /**
+     * Función inicial en el que se cargan 3 eventos.
+     */
     let init = function () {
         informacion = document.getElementById("info"); 
         let elementoBody = document.body;
@@ -25,6 +28,10 @@
 
     document.addEventListener("DOMContentLoaded",init);
 
+    /**
+     * Función en la que se muestrán las coordenadas X e Y.
+     * @param {} event 
+     */
     let muestraRaton = function (event) {
       
         let coordenadaX = event.clientX;
@@ -37,6 +44,10 @@
         informacion.className = "raton";
     }
 
+    /**
+     * Función que mostrará la tecla pulsada.
+     * @param {*} event 
+     */
     let muestraTecla = function (event) {
 
         let teclaPulsada = event.keyCode;
